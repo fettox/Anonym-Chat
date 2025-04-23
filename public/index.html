@@ -1,0 +1,101 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonim Chat</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Giriş Ekranı -->
+    <div id="login-screen" class="screen active">
+      <div class="login-container">
+        <h1>Chat </h1>
+        <div class="input-group">
+          <input type="text" id="username-input" placeholder="Kullanıcı adı" required>
+          <button id="login-button">Giriş Yap</button>
+        </div>
+        <p id="login-error" class="error-message"></p>
+      </div>
+    </div>
+    
+    <!-- Chat Ekranı -->
+    <div id="chat-screen" class="screen">
+      <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <h2>Sohbet Odaları</h2>
+            <div class="room-actions">
+              <button id="new-room-btn"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+          
+          <div class="room-list" id="room-list">
+            <!-- Oda listesi JavaScript ile doldurulacak -->
+          </div>
+          
+          <div class="user-list-container">
+            <h3>Çevrimiçi Kullanıcılar</h3>
+            <ul id="user-list">
+              <!-- Kullanıcı listesi JavaScript ile doldurulacak -->
+            </ul>
+          </div>
+          
+          <div class="user-profile">
+            <span id="current-user"></span>
+            <button id="logout-btn">Çıkış</button>
+          </div>
+        </div>
+        
+        <!-- Ana Chat Alanı -->
+        <div class="chat-area">
+          <div class="chat-header">
+            <h2 id="current-room">Genel</h2>
+            <div class="room-info">
+              <span id="room-users-count">0 Kullanıcı</span>
+            </div>
+          </div>
+          
+          <div class="messages-container" id="messages-container">
+            <!-- Mesajlar JavaScript ile doldurulacak -->
+          </div>
+          
+          <div class="typing-indicator" id="typing-indicator">
+            <!-- Yazıyor göstergesi -->
+          </div>
+          
+          <div class="message-input-container">
+            <div class="message-input-wrapper">
+              <input type="text" id="message-input" placeholder="Mesajınızı yazın...">
+              <div class="message-actions">
+                <button id="emoji-btn"><i class="far fa-smile"></i></button>
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Yeni Oda Modal -->
+    <div id="new-room-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Yeni Oda Oluştur</h3>
+        <div class="input-group">
+          <input type="text" id="room-name-input" placeholder="Oda adı">
+          <button id="create-room-btn">Oluştur</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emoji-picker-element/1.11.2/index.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

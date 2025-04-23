@@ -1,0 +1,422 @@
+/* public/style.css */
+:root {
+    --primary-color: #4b68ff;
+    --secondary-color: #5d7eff;
+    --bg-color: #f5f7ff;
+    --text-color: #333;
+    --light-color: #fff;
+    --dark-color: #232428;
+    --border-color: #eaeaea;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #4caf50;
+    --error-color: #f44336;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  /* Login Screen */
+  .login-container {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    max-width: 400px;
+    margin: 10% auto;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .input-group button {
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-group button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Chat Screen */
+  .chat-container {
+    display: flex;
+    height: 100vh;
+    background-color: var(--light-color);
+    box-shadow: 0 0 20px var(--shadow-color);
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 280px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-color);
+  }
+  
+  .sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .room-actions button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .room-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+  
+  .room-item {
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .room-item:hover, .room-item.active {
+    background-color: var(--bg-color);
+  }
+  
+  .room-item.active {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .user-list-container {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .user-list-container h3 {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .user-list {
+    list-style: none;
+  }
+  
+  .user-list li {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .user-profile {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-profile span {
+    font-weight: bold;
+  }
+  
+  #logout-btn {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  #logout-btn:hover {
+    color: var(--error-color);
+  }
+  
+  /* Chat Area */
+  .chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .room-info {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: var(--bg-color);
+  }
+  
+  .message {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+  }
+  
+  .message-user {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .message-time {
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .message-bubble {
+    background-color: var(--light-color);
+    padding: 0.8rem;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px var(--shadow-color);
+  }
+  
+  .message.own {
+    align-items: flex-end;
+  }
+  
+  .message.own .message-bubble {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+  }
+  
+  .typing-indicator {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
+  }
+  
+  .message-input-container {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .message-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .message-input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .message-actions {
+    display: flex;
+  }
+  
+  .message-actions button {
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    transition: color 0.2s ease;
+  }
+  
+  .message-actions button:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .close-modal:hover {
+    color: var(--error-color);
+  }
+  
+  /* Screens */
+  .screen {
+    display: none;
+    height: 100%;
+  }
+  
+  .screen.active {
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chat-container {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      height: 60px;
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+      flex-direction: row;
+      overflow-x: auto;
+    }
+    
+    .sidebar-header, .user-list-container, .user-profile {
+      display: none;
+    }
+    
+    .room-list {
+      display: flex;
+      flex-direction: row;
+      padding: 0.5rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    
+    .room-item {
+      margin-right: 0.5rem;
+      margin-bottom: 0;
+      padding: 0.5rem 1rem;
+    }
+    
+    .chat-area {
+      height: calc(100% - 60px);
+    }
+    
+    .messages-container {
+      padding: 0.5rem;
+    }
+    
+    .message-bubble {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 1.5rem;
+      margin: 5% auto;
+    }
+    
+    .message-input-wrapper {
+      padding: 0.3rem 0.8rem;
+    }
+    
+    .modal-content {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
